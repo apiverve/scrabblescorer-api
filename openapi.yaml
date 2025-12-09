@@ -1,0 +1,90 @@
+openapi: 3.0.4
+info:
+  title: Scrabble Word Scorer
+  description: Scrabble Word Scorer is a tool for calculating Scrabble points for words. It supports multiple languages including English, French, Spanish, German, and Italian with language-specific letter values.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/scrabblescorer:
+    get:
+      summary: Score Word
+      description: Scrabble Word Scorer is a tool for calculating Scrabble points for words. It supports multiple languages including English, French, Spanish, German, and Italian with language-specific letter values.
+      operationId: scrabblescorer
+      parameters:
+      - name: word
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The word to score
+        example: QUIZ
+      - name: language
+        default: english
+        in: query
+        schema:
+          type: string
+        required: false
+        description: 'Scrabble language variant: english, french, spanish, german, or italian (default: english)'
+        example: english
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  word: QUIZ
+                  language: english
+                  total_score: 22
+                  letter_count: 4
+                  letter_scores:
+                  - letter: Q
+                    score: 10
+                  - letter: U
+                    score: 1
+                  - letter: I
+                    score: 1
+                  - letter: Z
+                    score: 10
+                  highest_scoring_letter:
+                    letter: Q
+                    score: 10
+                  average_letter_score: 5.5
+                  note: Scores do not include board multipliers (double/triple letter/word)
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
