@@ -1,1 +1,3 @@
-from .apiClient import ScrabblescorerAPIClient
+from .apiClient import ScrabblescorerAPIClient, ScrabblescorerAPIClientError
+
+__all__ = ['ScrabblescorerAPIClient', 'ScrabblescorerAPIClientError']
