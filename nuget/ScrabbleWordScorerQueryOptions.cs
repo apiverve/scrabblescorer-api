@@ -12,14 +12,12 @@ namespace APIVerve.API.ScrabbleWordScorer
     {
         /// <summary>
         /// The word to score
-        /// Example: QUIZ
         /// </summary>
         [JsonProperty("word")]
         public string Word { get; set; }
 
         /// <summary>
         /// Scrabble language variant: english, french, spanish, german, or italian (default: english)
-        /// Example: english
         /// </summary>
         [JsonProperty("language")]
         public string Language { get; set; }
