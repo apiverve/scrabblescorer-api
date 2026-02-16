@@ -44,7 +44,10 @@ from apiverve_scrabblewordscorer.apiClient import ScrabblescorerAPIClient
 # Initialize the client with your APIVerve API key
 api = ScrabblescorerAPIClient("[YOUR_API_KEY]")
 
-query = { "word": "QUIZ", "language": "english" }
+query = {
+    "word": "QUIZ",
+    "language": "english"
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "word": "QUIZ", "language": "english" }
+query = {
+    "word": "QUIZ",
+    "language": "english"
+}
 ```
 
 ###### Simple Request
@@ -147,7 +153,10 @@ from apiverve_scrabblewordscorer.apiClient import ScrabblescorerAPIClient, Scrab
 
 api = ScrabblescorerAPIClient("[YOUR_API_KEY]")
 
-query = { "word": "QUIZ", "language": "english" }
+query = {
+    "word": "QUIZ",
+    "language": "english"
+}
 
 try:
     result = api.execute(query)
@@ -168,7 +177,10 @@ from apiverve_scrabblewordscorer.apiClient import ScrabblescorerAPIClient, Scrab
 
 api = ScrabblescorerAPIClient("[YOUR_API_KEY]")
 
-query = { "word": "QUIZ", "language": "english" }
+query = {
+    "word": "QUIZ",
+    "language": "english"
+}
 
 try:
     result = api.execute(query)
@@ -202,7 +214,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_scrabblewordscorer.apiClient import ScrabblescorerAPIClient, ScrabblescorerAPIClientError
 
-query = { "word": "QUIZ", "language": "english" }
+query = {
+    "word": "QUIZ",
+    "language": "english"
+}
 
 # Using context manager ensures proper cleanup
 with ScrabblescorerAPIClient("[YOUR_API_KEY]") as api:
@@ -228,7 +243,10 @@ from apiverve_scrabblewordscorer.apiClient import ScrabblescorerAPIClient
 # Enable debug mode
 api = ScrabblescorerAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "word": "QUIZ", "language": "english" }
+query = {
+    "word": "QUIZ",
+    "language": "english"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -243,8 +261,12 @@ from apiverve_scrabblewordscorer.apiClient import ScrabblescorerAPIClient
 
 api = ScrabblescorerAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "word": "QUIZ",
+    "language": "english"
+}
+
 try:
-    query = { "word": "QUIZ", "language": "english" }
     result = api.execute(query)
     print(result)
 finally:
