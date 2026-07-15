@@ -35,9 +35,7 @@ paths:
           schema:
             type: string
           required: false
-          description: >-
-            Scrabble language variant: english, french, spanish, german, or
-            italian (default: english)
+          description: Scrabble language variant
           example: english
       responses:
         '200':
