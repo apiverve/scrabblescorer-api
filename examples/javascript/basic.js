@@ -13,7 +13,13 @@ const API_URL = 'https://api.apiverve.com/v1/scrabblescorer';
  */
 async function callScrabbleWordScorerAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            word: &#x27;QUIZ&#x27;,
+            language: &#x27;english&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
