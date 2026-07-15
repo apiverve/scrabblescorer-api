@@ -30,7 +30,12 @@ The Scrabble Word Scorer API provides a simple, reliable way to integrate scrabb
 ```javascript
 async function callScrabbleWordScorerAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/scrabblescorer', {
+        const params = new URLSearchParams({
+            word: 'QUIZ',
+            language: 'english'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/scrabblescorer?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +55,7 @@ callScrabbleWordScorerAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/scrabblescorer?param=value" \
+curl -X GET "https://api.apiverve.com/v1/scrabblescorer?word=QUIZ&language=english" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +155,7 @@ go get github.com/apiverve/scrabblescorer-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +174,7 @@ go get github.com/apiverve/scrabblescorer-api/go
 The Scrabble Word Scorer API is commonly used for:
 
 - **Web Applications** - Add scrabble word scorer features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with scrabble word scorer capabilities
 - **Data Pipelines** - Process and analyze data at scale
