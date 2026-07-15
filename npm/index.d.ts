@@ -4,28 +4,40 @@ declare module '@apiverve/scrabblescorer' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface scrabblescorerResponse {
     status: string;
     error: string | null;
     data: ScrabbleWordScorerData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface ScrabbleWordScorerData {
-      word:                 string;
-      language:             string;
-      totalScore:           number;
-      letterCount:          number;
+      word:                 null | string;
+      language:             null | string;
+      totalScore:           number | null;
+      letterCount:          number | null;
       letterScores:         HighestScoringLetter[];
       highestScoringLetter: HighestScoringLetter;
-      averageLetterScore:   number;
-      note:                 string;
+      averageLetterScore:   number | null;
+      note:                 null | string;
   }
   
   interface HighestScoringLetter {
-      letter: string;
-      score:  number;
+      letter: null | string;
+      score:  number | null;
   }
 
   export default class scrabblescorerWrapper {
