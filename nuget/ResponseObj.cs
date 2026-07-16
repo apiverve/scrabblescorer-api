@@ -25,6 +25,9 @@ namespace APIVerve.API.ScrabbleWordScorer
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -36,10 +39,10 @@ namespace APIVerve.API.ScrabbleWordScorer
         public string Language { get; set; }
 
         [JsonProperty("total_score")]
-        public long TotalScore { get; set; }
+        public long? TotalScore { get; set; }
 
         [JsonProperty("letter_count")]
-        public long LetterCount { get; set; }
+        public long? LetterCount { get; set; }
 
         [JsonProperty("letter_scores")]
         public HighestScoringLetter[] LetterScores { get; set; }
@@ -48,7 +51,7 @@ namespace APIVerve.API.ScrabbleWordScorer
         public HighestScoringLetter HighestScoringLetter { get; set; }
 
         [JsonProperty("average_letter_score")]
-        public double AverageLetterScore { get; set; }
+        public double? AverageLetterScore { get; set; }
 
         [JsonProperty("note")]
         public string Note { get; set; }
@@ -60,6 +63,18 @@ namespace APIVerve.API.ScrabbleWordScorer
         public string Letter { get; set; }
 
         [JsonProperty("score")]
-        public long Score { get; set; }
+        public long? Score { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
