@@ -17,7 +17,7 @@ namespace APIVerve.API.ScrabbleWordScorer
         public string Word { get; set; }
 
         /// <summary>
-        /// Scrabble language variant: english, french, spanish, german, or italian (default: english)
+        /// Scrabble language variant
         /// </summary>
         [JsonProperty("language")]
         public string Language { get; set; }
