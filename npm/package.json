@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/scrabblescorer",
-  "version": "1.2.0",
-  "description": "Scrabble Word Scorer is a tool for calculating Scrabble points for words. It supports multiple languages including English, French, Spanish, German, and Italian with language-specific letter values.",
+  "version": "1.2.2",
+  "description": "Scrabble Word Scorer calculates the official Scrabble score for any word across five languages. It provides the total base points, letter count, and point values for each individual letter.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/scrabblescorer-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/scrabblescorer?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/scrabblescorer?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",

@@ -30,7 +30,7 @@ class scrabblescorerWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/scrabblescorer';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"word":{"type":"string","required":true},"language":{"type":"string","required":false,"default":"english"}};
+        this.validationRules = {"word":{"type":"string","required":true,"maxLength":100},"language":{"type":"string","required":false,"default":"english"}};
     }
 
     /**
