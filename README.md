@@ -1,13 +1,13 @@
-# [Scrabble Word Scorer API](https://apiverve.com/marketplace/scrabblescorer?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Scrabble Word Scorer API](https://apiverve.com/marketplace/scrabblescorer?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Scrabble Word Scorer is a tool for calculating Scrabble points for words. It supports multiple languages including English, French, Spanish, German, and Italian with language-specific letter values.
+Scrabble Word Scorer calculates the official Scrabble score for any word across five languages. It provides the total base points, letter count, and point values for each individual letter.
 
 The Scrabble Word Scorer API provides a simple, reliable way to integrate scrabble word scorer functionality into your applications. Built for developers who need production-ready scrabble word scorer capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/scrabblescorer?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/scrabblescorer?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/scrabblescorer?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/scrabblescorer?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -162,7 +162,7 @@ go get github.com/apiverve/scrabblescorer-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Scrabble Word Scorer API](https://apiverve.com/marketplace/scrabblescorer?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Scrabble Word Scorer API](https://apiverve.com/marketplace/scrabblescorer?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/scrabblescorer](https://docs.apiverve.com/ref/scrabblescorer)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -192,11 +192,55 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Scrabble Word Scorer API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "word": "QUIZ",
+    "language": "english",
+    "total_score": 22,
+    "letter_count": 4,
+    "letter_scores": [
+      {
+        "letter": "Q",
+        "score": 10
+      },
+      {
+        "letter": "U",
+        "score": 1
+      },
+      {
+        "letter": "I",
+        "score": 1
+      },
+      {
+        "letter": "Z",
+        "score": 10
+      }
+    ],
+    "highest_scoring_letter": {
+      "letter": "Q",
+      "score": 10
+    },
+    "average_letter_score": 5.5,
+    "note": "Scores do not include board multipliers (double/triple letter/word)"
+  }
 }
 ```
 
@@ -204,7 +248,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Scrabble Word Scorer API](https://apiverve.com/marketplace/scrabblescorer?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Scrabble Word Scorer API](https://apiverve.com/marketplace/scrabblescorer?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
