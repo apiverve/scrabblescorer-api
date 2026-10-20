@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,7 +24,7 @@ class ValidationError(ScrabblescorerAPIClientError):
 class ScrabblescorerAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "word": {"type": "string", "required": True},
+        "word": {"type": "string", "required": True, "maxLength": 100},
         "language": {"type": "string", "required": False, "default": "english"}
     }
 
