@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/scrabblescorer",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Scrabble Word Scorer calculates the official Scrabble score for any word across five languages. It provides the total base points, letter count, and point values for each individual letter.",
   "main": "index.js",
   "types": "index.d.ts",
