@@ -1,0 +1,5 @@
+## 1.2.6
+
+- Initial release
+- Full API support for Scrabble Word Scorer API
+- Typed request/response models
